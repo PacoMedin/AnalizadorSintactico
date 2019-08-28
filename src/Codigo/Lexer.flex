@@ -1,4 +1,6 @@
+package Codigo;
 import static codigo.Tokens.*;
+import java_cup.runtime.*;
 %%
 %class Lexer
 %type Tokens
