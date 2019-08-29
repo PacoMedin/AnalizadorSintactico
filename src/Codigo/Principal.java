@@ -37,10 +37,10 @@ public class Principal {
             Files.delete(rutaSym);
         }
         Files.move(
-                Paths.get("C:\\Users\\owner\\Documents\\NetBeansProjects\\AnalizadorSintactico\\src\\Codigo\\sym.java"), 
+                Paths.get("C:\\Users\\owner\\Documents\\NetBeansProjects\\AnalizadorSintactico\\sym.java"), 
                 Paths.get("C:\\Users\\owner\\Documents\\NetBeansProjects\\AnalizadorSintactico\\src\\Codigo\\sym.java")
         );
-        Path rutaSin = Paths.get("E:/Documentos/NetBeansProjects/AnalizadorLexico/src/codigo/Sintax.java");
+        Path rutaSin = Paths.get("C:\\Users\\owner\\Documents\\NetBeansProjects\\AnalizadorSintactico\\src\\Codigo\\Sintax.java");
         if (Files.exists(rutaSin)) {
             Files.delete(rutaSin);
         }

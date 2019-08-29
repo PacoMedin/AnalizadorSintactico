@@ -25,7 +25,7 @@ public enum Tokens {
     Parentesis_c,
     Llave_a,
     Llave_c,
-    P_coma,
+    Pcoma,
     Identificador,
     ERROR
    

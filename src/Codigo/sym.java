@@ -76,5 +76,6 @@ public class sym {
   "Numero",
   "ERROR"
   };
+    static int Err;
 }
 

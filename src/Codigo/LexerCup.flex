@@ -1,9 +1,8 @@
 
 package Codigo;
 import java_cup.runtime.Symbol;
-
-
 import static Codigo.Tokens.*;
+
 %%
 %class LexerCup
 %type java_cup.runtime.Symbol
@@ -42,8 +41,8 @@ main {return new Symbol(sym.Main, yychar, yyline, yytext());}
 ")" {return new Symbol (sym.Parentesis_c, yychar, yyline, yytext());}
 "{" {return new Symbol (sym.Llave_a, yychar, yyline, yytext());}
 "}" {return new Symbol (sym.Llave_c, yychar, yyline, yytext());}
-";" {return new Symbol (sym.P_Coma, yychar, yyline, yytext());}
+";" {return new Symbol (sym.Pcoma, yychar, yyline, yytext());}
 
 {L}({L}|{D})* | ("(-"{D}+")")|{D}+ {return new Symbol (sym.Identificador, yychar, yyline, yytext());}
 
- . {return new Symbol (sym.ERROR yychar, yyline, yytext());}
+ . {return new Symbol (sym.Err yychar, yyline, yytext());}

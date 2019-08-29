@@ -622,7 +622,7 @@ class Lexer {
             // fall through
           case 29: break;
           case 13: 
-            { lexeme=yytext(); return P_coma;
+            { lexeme=yytext(); return Pcoma;
             } 
             // fall through
           case 30: break;
