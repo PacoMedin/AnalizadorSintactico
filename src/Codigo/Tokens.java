@@ -10,8 +10,23 @@ package Codigo;
  * @author owner
  */
 public enum Tokens {
-    Raiz,
-    Hijo,
+    Int,
+    If,
+    Else,
+    While,
+    For,
+    Linea,
+    Igual,
+    Suma,
+    Resta,
+    Multiplicacion,
+    Division,
+    Parentesis_a,
+    Parentesis_c,
+    Llave_a,
+    Llave_c,
+    P_coma,
+    Identificador,
     ERROR
    
 }

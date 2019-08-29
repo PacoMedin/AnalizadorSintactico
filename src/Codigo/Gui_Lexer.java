@@ -5,7 +5,7 @@
  */
 package Codigo;
 
-import static Codigo.Tokens.Raiz;
+//import static Codigo.Tokens.Raiz;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -138,96 +138,10 @@ public class Gui_Lexer extends javax.swing.JFrame {
         }
         try {
             Reader lector = new BufferedReader(new FileReader("archivo.txt"));
-            Lexer lexer = new Lexer(lector);
+           // Lexer lexer = new Lexer(lector);
             String cadena=entrada.getText();
             String resultado = "";
-            int temp = 0;
-            for (int i = 0; i < entrada.getText().length(); i++) {
-                Tokens token = lexer.yylex();
-                //agregar un padre
-                if (token == Raiz) {
-                    if (lexer.lexeme.contains("*")) {
-                        prioridades.add(3);
-                        posiciones.add(i);
-                    }
-                    if (lexer.lexeme.contains("/")) {
-                        prioridades.add(2);
-                        posiciones.add(i);
-                    }
-                    if (lexer.lexeme.contains("+")) {
-                        prioridades.add(1);
-                        posiciones.add(i);
-                    }
-                    if (lexer.lexeme.contains("-")) {
-                        prioridades.add(0);
-                        posiciones.add(i);
-
-                    }
-                }
-               
-                
-
-            }
-            int MP = -1, P = -1;
-            for (int i = 0; i < prioridades.size(); i++) {
-                if (prioridades.get(i) > MP) {
-                    MP = prioridades.get(i);
-                    P = posiciones.get(i);
-                }
-            }
-            //d*c/(b+a) (a+b)/c*d
-            resultado += "\tRaiz principal: " + entrada.getText().charAt(P) + "\n";
-            resultado += "-Lado derecho a partir de la raiz-\n";
-            //System.out.println("Raiz: " + cadena.charAt(P));
-            for (int i = (P + 1); i < entrada.getText().length(); i++) {
-                if (String.valueOf(entrada.getText().charAt(i)).compareTo("(") == 0
-                        || String.valueOf(entrada.getText().charAt(i)).compareTo(")") == 0) {
-
-                } else {
-                    if (String.valueOf(entrada.getText().charAt(i)).compareTo("*") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("/") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("+") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("-") == 0) {
-                        resultado += "Izq: " + entrada.getText().charAt(i - 1) + "\n";
-                        //System.out.println("Izq: " + cadena.charAt(i-1));
-                    } else {
-                        if (String.valueOf(entrada.getText().charAt(i + 1)).compareTo(")") == 0
-                                || String.valueOf(entrada.getText().charAt(i + 1)).compareTo("(") == 0) {
-                            resultado += "Drc: " + entrada.getText().charAt(i) + "\n";
-                            //System.out.println("Drc: " + cadena.charAt(i));
-                        } else {
-                            resultado += "Drc: " + entrada.getText().charAt(i + 1) + "\n";
-                            //System.out.println("Drc: " + cadena.charAt(i+1));
-                        }
-                    }
-                }
-            }
-            resultado += "-Lado izquierdo a partir de la raiz-\n";
-            //System.out.println("-------");
-            for (int i = (P - 1); i >= 0; i--) {
-                if (String.valueOf(entrada.getText().charAt(i)).compareTo("(") == 0
-                        || String.valueOf(entrada.getText().charAt(i)).compareTo(")") == 0) {
-
-                } else {
-                    if (String.valueOf(entrada.getText().charAt(i)).compareTo("*") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("/") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("+") == 0
-                            || String.valueOf(entrada.getText().charAt(i)).compareTo("-") == 0) {
-                        resultado += "Drc: " + entrada.getText().charAt(i + 1) + "\n";
-                        //System.out.println("Drc: " + cadena.charAt(i+1));
-                    } else {
-                        if (String.valueOf(entrada.getText().charAt(i - 1)).compareTo("(") == 0
-                                || String.valueOf(entrada.getText().charAt(i - 1)).compareTo(")") == 0) {
-                            resultado += "Izq: " + entrada.getText().charAt(i) + "\n";
-                            //System.out.println("Izq: " + cadena.charAt(i));
-                        } else {
-                            resultado += "Izq: " + entrada.getText().charAt(i - 1) + "\n";
-                            //System.out.println("Izq: " + cadena.charAt(i-1));
-                        }
-                    }
-                }
-            }
-            txtArea.setText(resultado);
+           
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Gui_Lexer.class.getName()).log(Level.SEVERE, null, ex);
