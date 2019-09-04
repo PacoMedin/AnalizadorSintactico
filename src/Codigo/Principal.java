@@ -27,9 +27,10 @@ public class Principal {
     private static void generador(String ruta1,String ruta2,String []rutas) throws IOException, Exception {
         File archivo;
         archivo = new File(ruta1);
-        jflex.Main.generate(archivo);
+        
+        JFlex.Main.generate(archivo);
         archivo = new File(ruta2);
-        jflex.Main.generate(archivo);
+        JFlex.Main.generate(archivo);
         java_cup.Main.main(rutas);
         
         Path rutaSym = Paths.get("C:\\Users\\owner\\Documents\\NetBeansProjects\\AnalizadorSintactico\\src\\Codigo\\sym.java");
